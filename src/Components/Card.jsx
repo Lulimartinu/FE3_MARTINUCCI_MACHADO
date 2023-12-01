@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import doctor from "../images/doctor.jpg";
+import { ContextGlobal } from "./utils/global.context";
 
 const Card = ({ name, username, id }) => {
 

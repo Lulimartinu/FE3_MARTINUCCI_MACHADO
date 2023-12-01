@@ -1,4 +1,5 @@
 import React from 'react'
+import { ContextGlobal } from "./utils/global.context";
 
 const Footer = () => {
   return (

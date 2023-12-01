@@ -1,11 +1,13 @@
 import { createContext, useReducer } from "react";
 
+export const ContextGlobal = createContext({});
+
 export const initialState = {
   theme: "light",
   data: [],
 };
 
-export const ContextGlobal = createContext({});
+
 
 // global para el cambio de color, light o dark
 const reducer = (state, action) => {
@@ -13,7 +15,7 @@ const reducer = (state, action) => {
     case "TOGGLE_THEME": {
       const root = document.documentElement;
       if (state.theme === "dark") {
-        root.classList.remove("light");
+        root.classList.remove("dark");
       } else {
         root.classList.add("dark");
       }
