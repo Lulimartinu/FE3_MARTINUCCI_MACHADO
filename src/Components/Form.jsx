@@ -37,8 +37,9 @@ const Form = () => {
   return (
     <>
     <div>
+      <h2>Ingresa tus datos </h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="">Nombre: </label>
+        <label htmlFor="nombre">Nombre: </label>
         <input
           type="text"
           placeholder="Nombre Completo"
@@ -47,7 +48,7 @@ const Form = () => {
           onChange={(e) => setNombre(e.target.value)}
         />
 
-        <label htmlFor="">Email: </label>
+        <label htmlFor="email">Email: </label>
         <input
           type="text"
           placeholder="Email"
