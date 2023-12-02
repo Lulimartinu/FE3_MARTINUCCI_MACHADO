@@ -12,7 +12,7 @@ function App() {
   return (
     <>
     <div className={theme}>
-      <h1>MM Odontólogos</h1>
+      <h1>Machado & Martinucci Odontólogos</h1>
       <Navbar/>
       <Outlet />
       <Footer />
