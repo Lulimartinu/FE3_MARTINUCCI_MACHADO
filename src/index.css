@@ -14,20 +14,34 @@ code {
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
-  border: none;
+  background-color: lightgreen;
+  border-radius: 10px;
   width: 100%;
   cursor: pointer;
 }
 
 h1{
-  text-align: center;
+  text-align: left;
+  color: lightcoral;
+  margin-left: 20px;
 }
 
 nav{
   display: flex;
   width: 80vw;
   justify-content: flex-start;
+  width: auto;
+  height: 25%;
   padding: 1rem;
+ 
+}
+
+.navBar {
+  padding: 10px;
+  background-color: lightgreen;
+  border-radius: 10px;
+  width: auto;
+
 }
 
 a{
@@ -50,6 +64,7 @@ footer {
   width: 90%;
   height: 40px;
   margin-top: 2rem;
+  
 }
 
 footer > img{
