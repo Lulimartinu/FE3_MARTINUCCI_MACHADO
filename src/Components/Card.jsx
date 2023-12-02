@@ -7,10 +7,10 @@ const Card = ({ name, username, id }) => {
   const { changeTheme, dispatch } = useContext(ContextGlobal).contextValue;
   console.log("contextValue en Card:", useContext(ContextGlobal).contextValue);
 
-  const addFav = () => {
+  const addFav = (id,name,username) => {
     dispatch({ type: "ADD_FAV", payload: { name, username, id } })
 
-    console.log("Se agrego a favoritos " + id)
+    console.log("Se agrego a favoritos " + id + name + username)
     // Aqui iria la logica para agregar la Card en el localStorage
   };
   let image = (
@@ -44,12 +44,13 @@ const Card = ({ name, username, id }) => {
     <div >
       <div className="card-grid">
         {card.map((obj) => (
-          <li className="card">
+          <li className="card" key={obj.id}>
             {" "}
             {image} {obj.name} <br /> {obj.username}{" "}
-            <button onClick={() => addFav(obj.id)} className="favButton">
+            <button onClick={() => addFav(obj.id, obj.name, obj.username)} className="favButton">
   Add fav
 </button>
+
           </li>
         ))}
 
