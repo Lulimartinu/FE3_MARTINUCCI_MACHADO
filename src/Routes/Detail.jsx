@@ -1,47 +1,45 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import Favs from './Favs';
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { ContextGlobal } from "../Components/utils/global.context";
 
+const Detail = () => {
+  const { state } = useContext(ContextGlobal);
+  const { id } = useParams();
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+  const [dentist, setDentist] = useState();
+  const [err, setErr] = useState();
+  const [loading, setLoading] = useState(false);
 
- const Detail = () => { 
-    const { state } = useContext(ContextGlobal);
-    const { id }= useParams()
-
-    const [dentist, setDentist] = useState()
-    const [err, setErr] = useState()
-
-    async function getdentist() {
-        setLoading(true)
-        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
-        const data = await response.json()
-        setDentist(Favs)
-
+  async function getDentist() {
+    setLoading(true);
+    try {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+      const data = await response.json();
+      setDentist(data);
+    } catch (error) {
+      setErr(error.message);
+    } finally {
+      setLoading(false);
     }
+  }
 
+  useEffect(() => {
+    getDentist();
+  }, [id]);
 
-    useEffect(() => {
-        getdentist()
-    }, [])
-    return (
-      <div>
-        {err && <p>Error al obtener los detalles del dentista: {err}</p>}
-      {dentist && ( 
-        
-           
-           <article>
-                   { /*  Deberan mostrar el name - email - phone - website por cada user en especifico */ }
-                      <h2>{dentist.name}</h2>
-                        <p>{dentist.username}</p>
-                        <p>id: {dentist.id}</p>
-                    </article>
-         
-            
-          
-        )};
-      </div>
-    );
-  };
-  
-  export default Detail;
+  return (
+    <div>
+      {err && <p>Error al obtener los detalles del dentista: {err}</p>}
+      {loading && <p>Cargando...</p>}
+      {dentist && (
+        <article>
+          <h2>{dentist.name}</h2>
+          <p>{dentist.username}</p>
+          <p>id: {dentist.id}</p>
+        </article>
+      )}
+    </div>
+  );
+};
+
+export default Detail;
