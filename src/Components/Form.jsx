@@ -39,9 +39,9 @@ const Form = () => {
     <>
     <div>
       <h2>Ingresa tus datos </h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <label htmlFor="nombre">Nombre: </label>
-        <input
+        <input className="forms"
           type="text"
           placeholder="Nombre Completo"
           id="nombre"
@@ -50,7 +50,7 @@ const Form = () => {
         />
 
         <label htmlFor="email">Email: </label>
-        <input
+        <input className="forms" 
           type="text"
           placeholder="Email"
           id="email"

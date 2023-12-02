@@ -80,10 +80,19 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 300px;
+  width: 500px;
   height: 100px;
   margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: lightcoral;
 }
+
+.forms {
+  background-color:  lightgreen;
+}
+
 
 .card{
   display: flex;
