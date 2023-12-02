@@ -4,7 +4,11 @@ import doctor from "../images/doctor.jpg";
 import { ContextGlobal } from "./utils/global.context";
 
 const Card = ({ name, username, id }) => {
-  const { changeTheme, dispatch } = useContext(ContextGlobal).contextValue;
+  const { changeTheme} = useContext(ContextGlobal).contextValue;
+  const { dispatch, state } = useContext(ContextGlobal).contextValue;
+
+  console.log("State en Card:", state);
+
   console.log("contextValue en Card:", useContext(ContextGlobal).contextValue);
 
   const addFav = (id,name,username) => {
