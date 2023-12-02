@@ -13,10 +13,10 @@ const Footer = () => {
     <footer>
         <p>Juan Machado & Luisina Martinucci</p>
         <br/>
-        <img src={dh} alt='DH-logo' className='logo' />
-        <img src={instagram} alt='DH-logo' className='logo'/>
-        <img src={tiktok} alt='DH-logo' className='logo'/>
-        <img src={whats} alt='DH-logo'className='logo' />
+        <img src={dh} alt='DH-logo'  />
+        <img src={instagram} alt='DH-logo' className='redes'/>
+        <img src={tiktok} alt='DH-logo' className='redes'/>
+        <img src={whats} alt='DH-logo'className='redes' />
         
 
     </footer>

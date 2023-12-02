@@ -76,6 +76,12 @@ footer > p{
   padding-top: 0.7rem;
 }
 
+.redes {
+  width: 50px;
+  justify-content: space-around;
+  padding: 3px;
+}
+
 form{
   display: flex;
   flex-direction: column;
@@ -148,3 +154,5 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+

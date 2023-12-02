@@ -3,6 +3,7 @@ import { ContextGlobal } from "../Components/utils/global.context";
 import { Link } from "react-router-dom";
 import Card from "../Components/Card";
 
+
 const Favs = () => {
   const { state } = useContext(ContextGlobal);
 
@@ -25,7 +26,7 @@ const Favs = () => {
         {favs.map((dentist) => (
           <div key={dentist.id}>
             <Card dentist={dentist} />
-            <Link to={`/dentist/${dentist.id}`}>Ver detalles</Link>
+            <Link to={`/Detail/${dentist.id}`}>Details</Link>
           </div>
         ))}
       </div>
