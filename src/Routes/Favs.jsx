@@ -26,9 +26,10 @@ const Favs = () => {
       <h1>Dentists Favs</h1>
       <div className={'card-grid'}>
         {/* Mapear la lista de dentistas favoritos y renderizar una Card por cada uno */}
-        {favs.map((dentist) => (
-          <Card key={dentist.id} dentist={dentist} />
-        ))}
+        {favorites.map((dentist) => (
+  <Card key={dentist.id} dentist={dentist} />
+))}
+
       </div>
     </>
   );
