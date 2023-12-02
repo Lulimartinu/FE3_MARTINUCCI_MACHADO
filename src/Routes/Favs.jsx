@@ -29,6 +29,7 @@ const Favs = () => {
         {favorites.map((dentist) => (
           <Card key={dentist.id} dentist={dentist} />
         ))}
+           <Link to={`/Detail/${dentist.id}`}>Ver detalles</Link>
       </div>
     </>
   );
