@@ -1,13 +1,11 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 export const ContextGlobal = createContext({});
 
 export const initialState = {
   theme: "light",
-  data: [],
+  FAVS: [],
 };
-
-
 
 // global para el cambio de color, light o dark
 const reducer = (state, action) => {
@@ -21,6 +19,10 @@ const reducer = (state, action) => {
       }
       const newTheme = state.theme === "light" ? "dark" : "light";
       return { ...state, theme: newTheme };
+    }
+    case "ADD_FAVS": {
+      const newFavs = [...state.FAVS, action.payload];
+      return { ...state, FAVS: newFavs };
     }
 
     default:
@@ -36,10 +38,23 @@ export const ContextProvider = ({ children }) => {
     dispatch({ type: "TOGGLE_THEME" });
   }
 
+  /*
+  async function getFavs() {
+    const res = await (
+      await fetch("https://jsonplaceholder.typicode.com/users")
+    ).json();
+    dispatch({ type: "ADD_FAVS", payload: res });
+  }
+*/
   const contextValue = {
     ...state,
     changeTheme,
   };
+/*
+  useEffect(() => {
+    getFavs();
+  }, []);
+*/
   return (
     <ContextGlobal.Provider value={{ contextValue }}>
       {children}

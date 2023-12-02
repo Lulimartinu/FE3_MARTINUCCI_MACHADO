@@ -4,7 +4,7 @@ import { ContextGlobal } from "./utils/global.context";
 const Footer = () => {
   return (
     <footer>
-        <p>Powered by</p>
+        <p>PFOOTER</p>
         <img src="./img/DH.png" alt='DH-logo' />
     </footer>
   )

@@ -6,6 +6,7 @@ export default function Detail() {
     // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
 
     const params = useParams()
+    //data? 
     const [dentist, setDentist] = useState()
     const [loading, setLoading] = useState(true)
 

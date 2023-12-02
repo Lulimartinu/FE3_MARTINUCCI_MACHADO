@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useEffect } from "react";
 import doctor from "../images/doctor.jpg";
 import { ContextGlobal } from "./utils/global.context";
 
 const Card = ({ name, username, id }) => {
 
+  const { changeTheme } = useContext(ContextGlobal).contextValue;
   const addFav = () => {
+    dispatch({ type: "ADD_FAV", payload: { name, username, id } })
     // Aqui iria la logica para agregar la Card en el localStorage
   };
   let image = (
