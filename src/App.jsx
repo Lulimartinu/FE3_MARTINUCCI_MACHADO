@@ -15,8 +15,7 @@ function App() {
       <h1>MM Odontólogos</h1>
       <Navbar/>
       <Outlet />
-        <Card />
-        <Footer />
+      <Footer />
 
         </div>
     </>
