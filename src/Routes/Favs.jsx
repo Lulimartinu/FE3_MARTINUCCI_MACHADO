@@ -14,14 +14,14 @@ const Favs = () => {
   if (favs.length === 0) {
     return (
       
-        <p >No hay dentistas favoritos </p>
+        <h2 >No tienes dentistas favoritos ! </h2>
     );
   }
   
 
   return (
     <>
-      <h1>Dentists Favs</h1>
+      <h2>Dentistas Favoritos :</h2>
       <div className={'card-grid'}>
         {/* Mapear la lista de dentistas favoritos y renderizar una Card por cada uno */}
         {favs.map((dentist) => (

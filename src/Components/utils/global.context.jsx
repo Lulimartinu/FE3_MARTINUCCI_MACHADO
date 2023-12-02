@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 export const ContextGlobal = createContext({});
 
@@ -39,24 +39,13 @@ export const ContextProvider = ({ children }) => {
     dispatch({ type: "TOGGLE_THEME" });
   }
 
-  /*
-  async function getFavs() {
-    const res = await (
-      await fetch("https://jsonplaceholder.typicode.com/users")
-    ).json();
-    dispatch({ type: "ADD_FAVS", payload: res });
-  }
-*/
+  
   const contextValue = {
     ...state,
     dispatch,
     changeTheme,
   };
-/*
-  useEffect(() => {
-    getFavs();
-  }, []);
-*/
+
   return (
     <ContextGlobal.Provider value={{ contextValue }}>
       {children}
