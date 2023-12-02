@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ContextGlobal } from "../Components/utils/global.context";
 import Card from "../Components/Card";
 
@@ -7,7 +7,7 @@ const Favs = () => {
  
 
   // Obtener favoritos desde localStorage
-  const favorites = JSON.parse(localStorage.getItem("favs")) || [];
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
   // Aplicar clases de estilo condicional según el tema
 
@@ -26,7 +26,7 @@ const Favs = () => {
       <h1>Dentists Favs</h1>
       <div className={'card-grid'}>
         {/* Mapear la lista de dentistas favoritos y renderizar una Card por cada uno */}
-        {favs.map((dentist) => (
+        {favorites.map((dentist) => (
           <Card key={dentist.id} dentist={dentist} />
         ))}
       </div>

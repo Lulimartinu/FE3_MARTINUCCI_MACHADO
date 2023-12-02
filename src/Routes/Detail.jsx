@@ -48,10 +48,8 @@ import { useParams } from 'react-router-dom'
 
  const Detail = () => { 
     const { state } = useContext(ContextGlobal);
-    const { theme } = state;
-    const themeClass = theme === 'light' ? 'light' : 'dark';
-  
-    const { id } = useParams();
+    
+    const { id } = useParams()
     const [dentist, setDentist] = useState();
     const [error, setError] = useState();
   
@@ -63,7 +61,7 @@ import { useParams } from 'react-router-dom'
             throw new Error('Error en los detalles del dentista');
           }
           const data = await response.json();
-          setDentist(data);
+          setDentist(dentist);
         } catch (error) {
           setError(error.message);
         }
@@ -77,7 +75,7 @@ import { useParams } from 'react-router-dom'
     return (
       <div>
         {error && <p>Error al obtener los detalles del dentista: {error}</p>}
-        {dentist && (
+      {dentist && ( 
           <>
            
             <form><h2>Detalle del dentista {id}</h2>
@@ -88,7 +86,7 @@ import { useParams } from 'react-router-dom'
             </form>
             
           </>
-        )}
+        )};
       </div>
     );
   };
