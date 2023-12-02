@@ -38,7 +38,7 @@ const Form = () => {
   return (
     <>
     <div>
-      <h2>Ingresa tus datos </h2>
+      <h1>Ingresa tus datos </h1>
       <form onSubmit={handleSubmit} >
         <label htmlFor="nombre">Nombre: </label>
         <input className="forms"
@@ -63,7 +63,7 @@ const Form = () => {
         <input className="btn" type="submit" value="Enviar formulario" />
       </form>
 
-      {mensaje && <p style={{ color: "blue" }}>{mensaje}</p>}
+      {mensaje && <p style={{ color: "black" }}>{mensaje}</p>}
     
 
       </div>

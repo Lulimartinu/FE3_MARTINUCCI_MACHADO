@@ -1,11 +1,14 @@
 import React from 'react'
+
 import { ContextGlobal } from "./utils/global.context";
 
 const Footer = () => {
+
   return (
     <footer>
-        <p>PFOOTER</p>
-        <img src="./img/DH.png" alt='DH-logo' />
+        <p>FOOTER</p>
+        <img src="../images/DH.png" alt='DH-logo' />
+     
     </footer>
   )
 }

@@ -7,13 +7,11 @@ const Favs = () => {
  
 
   // Obtener favoritos desde localStorage
-  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-  // Aplicar clases de estilo condicional según el tema
+  const favs = JSON.parse(localStorage.getItem("favs")) || [];
 
 
   // Mostrar un mensaje si no hay dentistas favoritos
-  if (favorites.length === 0) {
+  if (favs.length === 0) {
     return (
       
         <p >No hay dentistas favoritos </p>
@@ -26,7 +24,7 @@ const Favs = () => {
       <h1>Dentists Favs</h1>
       <div className={'card-grid'}>
         {/* Mapear la lista de dentistas favoritos y renderizar una Card por cada uno */}
-        {favorites.map((dentist) => (
+        {favs.map((dentist) => (
           <Card key={dentist.id} dentist={dentist} />
         ))}
            <Link to={`/Detail/${dentist.id}`}>Ver detalles</Link>
