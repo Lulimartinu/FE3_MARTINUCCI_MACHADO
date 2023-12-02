@@ -6,6 +6,8 @@ const Favs = () => {
   //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
   const { FAVS } = useContext(ContextGlobal).contextValue;
+  console.log("Lista de favoritos:", FAVS);
+  console.log("contextValue en Favs:", useContext(ContextGlobal).contextValue);
 
   return (
     <>
@@ -14,8 +16,8 @@ const Favs = () => {
       {/* este componente debe consumir los destacados del localStorage */}
       {/* Deberan renderizar una Card por cada uno de ellos */}
       <div className="card-grid">
-        {FAVS.map((fav) => (
-          <Card key={fav.id} {...fav} />
+        {FAVS.map((fav,index) => (
+          <Card key={index} {...fav} />
         ))}
       </div>
     </>

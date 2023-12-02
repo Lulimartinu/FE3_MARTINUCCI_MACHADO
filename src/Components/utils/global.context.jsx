@@ -20,8 +20,9 @@ const reducer = (state, action) => {
       const newTheme = state.theme === "light" ? "dark" : "light";
       return { ...state, theme: newTheme };
     }
-    case "ADD_FAVS": {
+    case "ADD_FAV": {
       const newFavs = [...state.FAVS, action.payload];
+      console.log("Nuevo estado de FAVS:", newFavs);
       return { ...state, FAVS: newFavs };
     }
 
@@ -48,6 +49,7 @@ export const ContextProvider = ({ children }) => {
 */
   const contextValue = {
     ...state,
+    dispatch,
     changeTheme,
   };
 /*

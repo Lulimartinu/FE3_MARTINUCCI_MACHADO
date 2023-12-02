@@ -4,10 +4,13 @@ import doctor from "../images/doctor.jpg";
 import { ContextGlobal } from "./utils/global.context";
 
 const Card = ({ name, username, id }) => {
+  const { changeTheme, dispatch } = useContext(ContextGlobal).contextValue;
+  console.log("contextValue en Card:", useContext(ContextGlobal).contextValue);
 
-  const { changeTheme } = useContext(ContextGlobal).contextValue;
   const addFav = () => {
     dispatch({ type: "ADD_FAV", payload: { name, username, id } })
+
+    console.log("Se agrego a favoritos " + id)
     // Aqui iria la logica para agregar la Card en el localStorage
   };
   let image = (
@@ -44,9 +47,9 @@ const Card = ({ name, username, id }) => {
           <li className="card">
             {" "}
             {image} {obj.name} <br /> {obj.username}{" "}
-            <button onClick={addFav} className="favButton">
-              Add fav
-            </button>
+            <button onClick={() => addFav(obj.id)} className="favButton">
+  Add fav
+</button>
           </li>
         ))}
 
